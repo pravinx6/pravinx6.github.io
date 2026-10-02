@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pravin Sai | Content Writer</title>
+
+    <meta name="description" content="Pravin Sai — Content Writer. Ideas, research, stories and thoughtful writing.">
+
+    <style>
+
+        /* =========================
+           BASIC
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f0e6;
+            color: #173d32;
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(244, 240, 230, 0.96);
+            border-bottom: 1px solid rgba(23, 61, 50, 0.18);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: #173d32;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(23, 61, 50, 0.18);
+        }
+
+        .hero::before {
+            content: "WRITER";
+            position: absolute;
+            right: -40px;
+            bottom: -65px;
+
+            font-family: Arial, sans-serif;
+            font-size: clamp(100px, 20vw, 250px);
+            font-weight: 300;
+            letter-spacing: -8px;
+
+            color: rgba(23, 61, 50, 0.035);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            opacity: 0.68;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 11vw, 135px);
+            line-height: 0.88;
+            letter-spacing: -3px;
+            font-weight: 400;
+            margin-bottom: 35px;
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-left: 9%;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .hero-small {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.58;
+            margin-bottom: 35px;
+        }
+
+        .primary-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #173d32;
+            color: #f4f0e6;
+
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            transition: 0.3s ease;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 7px 7px 0 rgba(23, 61, 50, 0.12);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-label {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 20px;
+            opacity: 0.58;
+        }
+
+        .section-title {
+            font-size: clamp(43px, 6.5vw, 76px);
+            line-height: 1;
+            letter-spacing: -2px;
+            font-weight: 400;
+            margin-bottom: 55px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            border-bottom: 1px solid rgba(23, 61, 50, 0.18);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-intro {
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.18;
+            font-weight: 400;
+        }
+
+        .about-text {
+            font-size: 18px;
+            font-weight: 400;
+            max-width: 650px;
+        }
+
+        .about-text p {
+            margin-bottom: 22px;
+        }
+
+        .about-signature {
+            margin-top: 35px;
+            font-style: italic;
+            font-size: 23px;
+            font-weight: 400;
+        }
+
+
+        /* =========================
+           WRITING
+        ========================== */
+
+        .writing {
+            border-bottom: 1px solid rgba(23, 61, 50, 0.18);
+        }
+
+        .writing-intro {
+            max-width: 700px;
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: -30px;
+            margin-bottom: 60px;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .article-card {
+            min-height: 390px;
+            border: 1px solid rgba(23, 61, 50, 0.28);
+            padding: 32px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            position: relative;
+            overflow: hidden;
+
+            transition: 0.35s ease;
+        }
+
+        .article-card::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 1px solid rgba(23, 61, 50, 0.10);
+            border-radius: 50%;
+            right: -45px;
+            top: -45px;
+            transition: 0.4s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            background: #eee9dc;
+            box-shadow: 8px 8px 0 rgba(23, 61, 50, 0.07);
+        }
+
+        .article-card:hover::before {
+            transform: scale(1.2);
+        }
+
+        .article-number {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            opacity: 0.48;
+        }
+
+        .article-category {
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            opacity: 0.55;
+            margin-top: 10px;
+        }
+
+        .article-title {
+            font-size: clamp(29px, 3vw, 40px);
+            line-height: 1.08;
+            font-weight: 400;
+            letter-spacing: -0.7px;
+            margin: 25px 0;
+            max-width: 500px;
+        }
+
+        .article-link {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+        }
+
+        .coming-soon {
+            background: rgba(23, 61, 50, 0.025);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact .section-title {
+            margin-bottom: 25px;
+        }
+
+        .contact-text {
+            max-width: 600px;
+            margin: 0 auto 35px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .email-display {
+            margin-top: 25px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.7px;
+        }
+
+        .email-display a {
+            border-bottom: 1px solid rgba(23, 61, 50, 0.7);
+        }
+
+
+        /* =========================
+           CV
+        ========================== */
+
+        .cv-area {
+            margin-top: 55px;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            border: 1px solid #173d32;
+            padding: 14px 24px;
+
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            transition: 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: #173d32;
+            color: #f4f0e6;
+        }
+
+        .cv-note {
+            margin-top: 12px;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            opacity: 0.45;
+        }
+
+
+        /* =========================
+           PROFESSIONAL LINKS
+        ========================== */
+
+        .professional {
+            margin-top: 70px;
+            padding-top: 45px;
+            border-top: 1px solid rgba(23, 61, 50, 0.18);
+        }
+
+        .professional-title {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            opacity: 0.55;
+            margin-bottom: 20px;
+        }
+
+        .professional-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .professional-links a {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            border-bottom: 1px solid rgba(23, 61, 50, 0.35);
+            padding-bottom: 4px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid rgba(23, 61, 50, 0.18);
+            padding: 30px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-name {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .footer-copy {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            opacity: 0.55;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .nav-inner {
+                min-height: 70px;
+            }
+
+            .nav-links {
+                gap: 13px;
+                font-size: 9px;
+            }
+
+            .logo {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero h1 span {
+                margin-left: 4%;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                min-height: 340px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: 88%;
+            }
+
+            .nav-links {
+                gap: 9px;
+            }
+
+            .nav-links a:nth-child(2) {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 62px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .article-card {
+                padding: 25px;
+            }
+
+            .professional-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                PRAVIN SAI
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#writing">Writing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    Content Writer
+                </div>
+
+                <h1>
+                    PRAVIN
+                    <span>SAI.</span>
+                </h1>
+
+                <p class="hero-description">
+                    I write about ideas, questions, experiences and
+                    the things that make us stop and think.
+                </p>
+
+                <p class="hero-small">
+                    Words • Ideas • Curiosity
+                </p>
+
+                <a href="#writing" class="primary-button">
+                    Explore My Writing →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="section-label">
+                01 — About
+            </div>
+
+            <div class="about-grid">
+
+                <div>
+                    <h2 class="about-intro">
+                        I write because I am curious.
+                    </h2>
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        Writing gives me a way to explore ideas,
+                        understand different perspectives and turn
+                        thoughts into something meaningful.
+                    </p>
+
+                    <p>
+                        I enjoy writing about different subjects —
+                        from technology and research to student
+                        experiences, human behaviour, everyday
+                        observations and ideas that make me curious.
+                    </p>
+
+                    <p>
+                        My goal is simple: to create writing that is
+                        clear, thoughtful and easy to connect with.
+                    </p>
+
+                    <p>
+                        I am also continuously learning and improving
+                        my writing by researching, writing, editing
+                        and experimenting with different ways of
+                        communicating an idea.
+                    </p>
+
+                    <div class="about-signature">
+                        — Pravin Sai
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WRITING -->
+
+    <section class="writing" id="writing">
+
+        <div class="container">
+
+            <div class="section-label">
+                02 — Selected Writing
+            </div>
+
+            <h2 class="section-title">
+                Words worth<br>
+                spending time with.
+            </h2>
+
+            <p class="writing-intro">
+                A collection of articles exploring questions,
+                experiences and ideas from different perspectives.
+            </p>
+
+
+            <div class="article-grid">
+
+
+                <!-- ARTICLE 1 -->
+
+                <a href="marks.html" class="article-card">
+
+                    <div>
+                        <div class="article-number">
+                            01
+                        </div>
+
+                        <div class="article-category">
+                            Featured Article
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <h3 class="article-title">
+                            Do Marks Really Measure a Student's Ability?
+                        </h3>
+
+                        <div class="article-link">
+                            Read Article →
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- ARTICLE 2 -->
+
+                <a href="internet.html" class="article-card">
+
+                    <div>
+                        <div class="article-number">
+                            02
+                        </div>
+
+                        <div class="article-category">
+                            Technology & Society
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <h3 class="article-title">
+                            Who Actually Controls the Internet?
+                        </h3>
+
+                        <div class="article-link">
+                            Read Article →
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- ARTICLE 3 -->
+
+                <a href="loneliness.html" class="article-card">
+
+                    <div>
+                        <div class="article-number">
+                            03
+                        </div>
+
+                        <div class="article-category">
+                            Human Experience
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <h3 class="article-title">
+                            Why Do We Feel Lonely Even When We Are Always Connected?
+                        </h3>
+
+                        <div class="article-link">
+                            Read Article →
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- COMING SOON -->
+
+                <div class="article-card coming-soon">
+
+                    <div>
+                        <div class="article-number">
+                            04
+                        </div>
+
+                        <div class="article-category">
+                            Coming Soon
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <h3 class="article-title">
+                            More stories are on the way.
+                        </h3>
+
+                        <div class="article-link">
+                            Stay Tuned
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-label">
+                03 — Contact
+            </div>
+
+            <h2 class="section-title">
+                Let's Connect.
+            </h2>
+
+            <p class="contact-text">
+                Have an idea, project, opportunity or simply want
+                to talk about writing? I'd be happy to hear from you.
+            </p>
+
+
+            <!-- GMAIL -->
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=pravinsai.writes@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="primary-button"
+            >
+                Email Me →
+            </a>
+
+
+            <div class="email-display">
+
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=pravinsai.writes@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    pravinsai.writes@gmail.com
+                </a>
+
+            </div>
+
+
+
+            <!-- CV -->
+
+            <div class="cv-area">
+
+                <a
+                    href="Pravin-Sai-CV.pdf"
+                    class="secondary-button"
+                    download
+                >
+                    Download My CV ↓
+                </a>
+
+                <p class="cv-note">
+                    Add your CV as "Pravin-Sai-CV.pdf" to the portfolio folder.
+                </p>
+
+            </div>
+
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="professional">
+
+                <div class="professional-title">
+                    Find Me Online
+                </div>
+
+                <div class="professional-links">
+
+                    <a href="#" target="_blank">
+                        LinkedIn
+                    </a>
+
+                    <a href="#" target="_blank">
+                        Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div class="footer-name">
+                Pravin Sai — Content Writer
+            </div>
+
+            <div class="footer-copy">
+                © 2026 Pravin Sai. All rights reserved.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
